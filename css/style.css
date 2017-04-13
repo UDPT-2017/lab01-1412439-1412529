@@ -6,29 +6,32 @@
 
 #top{
     width: 100%;
-    height: 120px;
-    background: #304352; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #304352 , #d7d2cc); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #304352 , #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
+    height: 110px;
+    /*background: #304352; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #304352 , #d7d2cc); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #304352 , #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #leftmenu{
     width:17%;
     height: 11  00px;
-    background-color: rgb(248, 248, 248); 
+    /*background-color: rgb(248, 248, 248);*/
     float : left;
 }
 
 #content{
     width:83%;
     margin: auto;
-    background-color:snow;
+    background-color: blanchedalmond;
     float: left;
 }
 
 #content .row{
-    background-color:snow;
+    background-color:blanchedalmond;
     margin-top: 10px;
     margin: auto;
     margin-bottom: 40px;
@@ -36,7 +39,7 @@
 .home-cover{
     height: 252.5px;
     margin-bottom: 30px;
-    border: 2px solid green;
+    border: 2px solid darkgreen;
 }
 
 .home-cover img{
@@ -46,7 +49,7 @@
 
 
 #nav{
-    background-color:greenyellow;
+    background-color:darkgreen;
     font-size: 110%;
     margin-bottom: 2px;
 }
