@@ -1,0 +1,50 @@
+
+#wrapper{
+    width: 100%;
+    margin:auto;
+    background-color: gray;
+}
+
+#top{
+    width: 100%;
+    height: 110px;
+    /*background: #304352; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #304352 , #d7d2cc); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #304352 , #d7d2cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ECE9E6;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+#content{
+    width:100%;
+    margin: auto;
+    background-color:white;
+    float: left;
+}
+
+#content .row{
+    margin-top: 10px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+
+#nav{
+    font-size: 110%;
+    margin-bottom: 2px;
+}
+
+li #nav{
+    color: white;
+    font-size: 150%;
+}
+
+
+#footer {
+    height: 80px;
+    background-color: darkslategrey;
+    clear: both;
+}
