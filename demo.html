@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#bt1").click(function(){
+                $.post("/postdata",
+                        {
+                            name: "Donald Duck",
+                            city: "Duckburg"
+                        },
+                        function(data, status){
+                            alert("Data: " + data + "\nStatus: " + status);
+                        });
+            });
+            $("#bt2").click(function(){
+                $.get("/getdata",function(data,status){
+                    alert(data);
+                });
+
+
+
+
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="bt1">post data</button>
+<button id="bt2">Get data</button>
+</body>
+</html>

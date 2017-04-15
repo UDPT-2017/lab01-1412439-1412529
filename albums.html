@@ -2,14 +2,440 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hello Bootstrap</title>
 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        /////////////////////////////////////
+        //create new album
 
+        $(document).ready(function(){
+
+            var albums1=[];
+            var albums2=[];
+            var albums3=[];
+
+                $.get("/getdata",function(data,status){
+                    alert('gau gau');
+                    for(i=0;i<6;i++){
+                        albums1.push(data.data1[i]);
+                        // alert(data.data1);
+                        albums2.push(data.data2[i]);
+                        albums3.push(data.data3[i]);
+                    };
+                    alert(albums1);
+                    alert(albums2);
+                    alert(albums3);
+
+                });
+
+
+            ////////////
+            //close event
+
+
+            $(window).on("beforeunload", function() {
+
+
+
+            });
+            //////////////////////////////////////
+
+
+            var flag=1;
+            $('.aa').click(function(e)
+            {
+                // Special stuff to do when this link is clicked...
+
+                // Cancel the default action
+                e.preventDefault();
+            });
+            var x='images';
+
+            $('#albums1').click(function(){
+                //////////////////////////////////
+
+                //////////////////////////////////
+                flag=1;
+                for( i=1;i<=6;i++){
+                    var y='#view'+i;
+                    $(y).text(albums1[i-1]);
+                    var a='images/albums1/img'+ i+'.jpg';
+                    var x="#img"+i;
+                    $(x).attr("src",a);
+
+                }
+                $('#container_img').show();
+            });
+            $('#albums2').click(function(){
+
+                flag=2;
+                for( i=1;i<=6;i++){
+                    var y='#view'+i;
+                    $(y).text(albums2[i-1]);
+                    var a='images/albums2/img'+ i+'.jpg';
+                    var x="#img"+i;
+                    $(x).attr("src",a);
+                }
+                $('#container_img').show();
+            });
+            $('#albums3').click(function(){
+                flag=3;
+                for( i=1;i<=6;i++){
+                    var y='#view'+i;
+                    $(y).text(albums3[i-1]);
+                    var a='images/albums3/img'+ i+'.jpg';
+                    var x="#img"+i;
+                    $(x).attr("src",a);
+                }
+                $('#container_img').show();
+            });
+            ////////////////////////////////////
+            //xu ly so luong view
+            $('#img1').click(function(){
+
+                if(flag==1){
+
+                    albums1[0]=albums1[0]+1;
+                    $('#view1').text(albums1[0]);
+                    $.post("/postdata",
+                            {
+                                data1: 0,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[0]=albums2[0]+1;
+                    $('#view1').text(albums2[0]);
+                    $.post("/postdata",
+                            {
+                                data1: 0,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[0]=albums3[0]+1;
+                    $('#view1').text(albums3[0]);
+                    $.post("/postdata",
+                            {
+                                data1: 0,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img1.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                    var t='albums'+flag;
+
+            });
+            $('#img2').click(function(){
+
+                if(flag==1){
+                    albums1[1]=albums1[1]+1;
+                    $('#view2').text(albums1[1]);
+                    $.post("/postdata",
+                            {
+                                data1: 1,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[1]=albums2[1]+1;
+                    $('#view2').text(albums2[1]);
+                    $.post("/postdata",
+                            {
+                                data1: 1,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[1]=albums3[1]+1;
+                    $('#view2').text(albums3[1]);
+                    $.post("/postdata",
+                            {
+                                data1: 1,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img2.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                var t='albums'+flag;
+
+
+            });
+            $('#img3').click(function(){
+
+                if(flag==1){
+
+
+                    albums1[2]=albums1[2]+1;
+                    $('#view3').text(albums1[2]);
+                    $.post("/postdata",
+                            {
+                                data1: 2,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[2]=albums2[2]+1;
+                    $('#view3').text(albums2[2]);
+                    $.post("/postdata",
+                            {
+                                data1: 2,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[2]=albums3[2]+1;
+                    $('#view3').text(albums3[2]);
+                    $.post("/postdata",
+                            {
+                                data1: 2,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img3.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                var t='albums'+flag;
+
+
+            });
+            $('#img4').click(function(){
+
+                if(flag==1){
+                    albums1[3]=albums1[3]+1;
+                    $('#view4').text(albums1[3]);
+                    $.post("/postdata",
+                            {
+                                data1: 3,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[3]=albums2[3]+1;
+                    $('#view4').text(albums2[3]);
+                    $.post("/postdata",
+                            {
+                                data1: 3,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[3]=albums3[3]+1;
+                    $('#view4').text(albums3[3]);
+                    $.post("/postdata",
+                            {
+                                data1: 3,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img4.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                var t='albums'+flag;
+
+
+            });
+            $('#img5').click(function(){
+
+                if(flag==1){
+                    albums1[4]=albums1[4]+1;
+                    $('#view5').text(albums1[4]);
+                    $.post("/postdata",
+                            {
+                                data1: 4,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[4]=albums2[4]+1;
+                    $('#view5').text(albums2[4]);
+                    $.post("/postdata",
+                            {
+                                data1: 4,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[4]=albums3[4]+1;
+                    $('#view5').text(albums3[4]);
+                    $.post("/postdata",
+                            {
+                                data1: 4,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img5.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                var t='albums'+flag;
+
+
+            });
+            $('#img6').click(function(){
+
+                if(flag==1){
+                    albums1[5]=albums1[5]+1;
+                    $('#view6').text(albums1[5]);
+                    $.post("/postdata",
+                            {
+                                data1: 5,
+                                data2:flag,
+                                data3:albums1.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==2){
+                    albums2[5]=albums2[5]+1;
+                    $('#view6').text(albums2[5]);
+                    $.post("/postdata",
+                            {
+                                data1: 5,
+                                data2:flag,
+                                data3:albums2.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                if(flag==3){
+                    albums3[5]=albums3[5]+1;
+                    $('#view6').text(albums3[5]);
+                    $.post("/postdata",
+                            {
+                                data1: 5,
+                                data2:flag,
+                                data3:albums3.toString()
+
+
+                            },
+                            function(data, status){
+                                ///alert("Data: " + data + "\nStatus: " + status);
+                            });
+                }
+                var src1='images/albums'+ flag+'/img6.jpg';
+
+                $('#img_modal').attr('src',src1);
+                $('#myModal').modal('show');
+                var t='albums'+flag;
+
+
+
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -34,10 +460,130 @@
             </ul>
         </div>
     </nav>
-    <h1>Albums</h1>
+   <!-- create by meo bach-->
 
-    <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
-    <script src="js/bootstrap.js " charset="UTF-8 "></script>
+
+    <div id="container" class="container-fluid">
+        <div class="thumbnail" style="width: 300px;display: inline-block; margin:20px;margin-left: 20%">
+            <a  class="aa" href="" id="albums1" style="text-decoration: none" >
+                <img src="images/albums1/img4.jpg">
+                <div style="text-align: center;font-size: 20px;" class="caption">
+                    Ảnh động vật
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail" style="width: 300px;display: inline-block;margin: 20px;margin-left: 20px">
+            <a class="aa" href="" id="albums2" style="text-decoration: none">
+                <img src="images/albums2/img1.jpg">
+                <div style="text-align: center;font-size: 20px" class="caption">
+                    Ảnh thực vật
+                </div>
+            </a>
+        </div>
+        <div class="thumbnail" style="width: 300px;display: inline-block;margin: 20px">
+            <a class="aa" href="" id="albums3" style="text-decoration: none">
+                <img src="images/albums3/img3.jpg">
+                <div style="text-align: center;font-size: 20px" class="caption">
+                    Ảnh Thiên nhiên
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+    <!-------------------list chưa anh-->
+    <div style="display: none" id="container_img">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img1.jpg" id="img1">
+                        <div class="caption" style="text-align: center;font-size: 20px " id="view1">
+                            view1
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img2.jpg" id="img2">
+                        <div class="caption" style="text-align: center;font-size: 20px" id="view2">
+                            view
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img3.jpg" id="img3">
+                        <div class="caption" style="text-align: center;font-size: 20px" id="view3">
+                            view
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img4.jpg" id="img4">
+                        <div class="caption" style="text-align: center;font-size: 20px" id="view4">
+                            view
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img5.jpg" id="img5">
+                        <div class="caption" style="text-align: center;font-size: 20px" id="view5">
+                            view
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <a class="aa" href="" style="text-decoration: none">
+                        <img src="images/albums3/img6.jpg" id="img6">
+                        <div class="caption" style="text-align: center;font-size: 20px" id="view6">
+                            view
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--MODAL-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <div class="modal-body"  >
+                    <div style="width: 610px;margin: 0 auto">
+                        <img src=""  style="width: 600px;" id="img_modal">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<button id="bt2"> Click</button>
 
 </body>
 
