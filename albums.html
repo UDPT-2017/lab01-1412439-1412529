@@ -18,32 +18,32 @@
         /////////////////////////////////////
         //create new album
 
-        $(document).ready(function(){
+        $(document).ready(function () {
 
-            var albums1=[];
-            var albums2=[];
-            var albums3=[];
+            var albums1 = [];
+            var albums2 = [];
+            var albums3 = [];
 
-                $.get("/getdata",function(data,status){
-                    alert('gau gau');
-                    for(i=0;i<6;i++){
-                        albums1.push(data.data1[i]);
-                        // alert(data.data1);
-                        albums2.push(data.data2[i]);
-                        albums3.push(data.data3[i]);
-                    };
-                    alert(albums1);
-                    alert(albums2);
-                    alert(albums3);
+            $.get("/getdata", function (data, status) {
+                alert('gau gau');
+                for (i = 0; i < 6; i++) {
+                    albums1.push(data.data1[i]);
+                    // alert(data.data1);
+                    albums2.push(data.data2[i]);
+                    albums3.push(data.data3[i]);
+                };
+                alert(albums1);
+                alert(albums2);
+                alert(albums3);
 
-                });
+            });
 
 
             ////////////
             //close event
 
 
-            $(window).on("beforeunload", function() {
+            $(window).on("beforeunload", function () {
 
 
 
@@ -51,385 +51,384 @@
             //////////////////////////////////////
 
 
-            var flag=1;
-            $('.aa').click(function(e)
-            {
+            var flag = 1;
+            $('.aa').click(function (e) {
                 // Special stuff to do when this link is clicked...
 
                 // Cancel the default action
                 e.preventDefault();
             });
-            var x='images';
+            var x = 'images';
 
-            $('#albums1').click(function(){
+            $('#albums1').click(function () {
                 //////////////////////////////////
 
                 //////////////////////////////////
-                flag=1;
-                for( i=1;i<=6;i++){
-                    var y='#view'+i;
-                    $(y).text(albums1[i-1]);
-                    var a='images/albums1/img'+ i+'.jpg';
-                    var x="#img"+i;
-                    $(x).attr("src",a);
+                flag = 1;
+                for (i = 1; i <= 6; i++) {
+                    var y = '#view' + i;
+                    $(y).text(albums1[i - 1]);
+                    var a = 'images/albums1/img' + i + '.jpg';
+                    var x = "#img" + i;
+                    $(x).attr("src", a);
 
                 }
                 $('#container_img').show();
             });
-            $('#albums2').click(function(){
+            $('#albums2').click(function () {
 
-                flag=2;
-                for( i=1;i<=6;i++){
-                    var y='#view'+i;
-                    $(y).text(albums2[i-1]);
-                    var a='images/albums2/img'+ i+'.jpg';
-                    var x="#img"+i;
-                    $(x).attr("src",a);
+                flag = 2;
+                for (i = 1; i <= 6; i++) {
+                    var y = '#view' + i;
+                    $(y).text(albums2[i - 1]);
+                    var a = 'images/albums2/img' + i + '.jpg';
+                    var x = "#img" + i;
+                    $(x).attr("src", a);
                 }
                 $('#container_img').show();
             });
-            $('#albums3').click(function(){
-                flag=3;
-                for( i=1;i<=6;i++){
-                    var y='#view'+i;
-                    $(y).text(albums3[i-1]);
-                    var a='images/albums3/img'+ i+'.jpg';
-                    var x="#img"+i;
-                    $(x).attr("src",a);
+            $('#albums3').click(function () {
+                flag = 3;
+                for (i = 1; i <= 6; i++) {
+                    var y = '#view' + i;
+                    $(y).text(albums3[i - 1]);
+                    var a = 'images/albums3/img' + i + '.jpg';
+                    var x = "#img" + i;
+                    $(x).attr("src", a);
                 }
                 $('#container_img').show();
             });
             ////////////////////////////////////
             //xu ly so luong view
-            $('#img1').click(function(){
+            $('#img1').click(function () {
 
-                if(flag==1){
+                if (flag == 1) {
 
-                    albums1[0]=albums1[0]+1;
+                    albums1[0] = albums1[0] + 1;
                     $('#view1').text(albums1[0]);
                     $.post("/postdata",
-                            {
-                                data1: 0,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 0,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[0]=albums2[0]+1;
+                if (flag == 2) {
+                    albums2[0] = albums2[0] + 1;
                     $('#view1').text(albums2[0]);
                     $.post("/postdata",
-                            {
-                                data1: 0,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 0,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[0]=albums3[0]+1;
+                if (flag == 3) {
+                    albums3[0] = albums3[0] + 1;
                     $('#view1').text(albums3[0]);
                     $.post("/postdata",
-                            {
-                                data1: 0,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 0,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img1.jpg';
+                var src1 = 'images/albums' + flag + '/img1.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                    var t='albums'+flag;
+                var t = 'albums' + flag;
 
             });
-            $('#img2').click(function(){
+            $('#img2').click(function () {
 
-                if(flag==1){
-                    albums1[1]=albums1[1]+1;
+                if (flag == 1) {
+                    albums1[1] = albums1[1] + 1;
                     $('#view2').text(albums1[1]);
                     $.post("/postdata",
-                            {
-                                data1: 1,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 1,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[1]=albums2[1]+1;
+                if (flag == 2) {
+                    albums2[1] = albums2[1] + 1;
                     $('#view2').text(albums2[1]);
                     $.post("/postdata",
-                            {
-                                data1: 1,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 1,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[1]=albums3[1]+1;
+                if (flag == 3) {
+                    albums3[1] = albums3[1] + 1;
                     $('#view2').text(albums3[1]);
                     $.post("/postdata",
-                            {
-                                data1: 1,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 1,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img2.jpg';
+                var src1 = 'images/albums' + flag + '/img2.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                var t='albums'+flag;
+                var t = 'albums' + flag;
 
 
             });
-            $('#img3').click(function(){
+            $('#img3').click(function () {
 
-                if(flag==1){
+                if (flag == 1) {
 
 
-                    albums1[2]=albums1[2]+1;
+                    albums1[2] = albums1[2] + 1;
                     $('#view3').text(albums1[2]);
                     $.post("/postdata",
-                            {
-                                data1: 2,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 2,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[2]=albums2[2]+1;
+                if (flag == 2) {
+                    albums2[2] = albums2[2] + 1;
                     $('#view3').text(albums2[2]);
                     $.post("/postdata",
-                            {
-                                data1: 2,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 2,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[2]=albums3[2]+1;
+                if (flag == 3) {
+                    albums3[2] = albums3[2] + 1;
                     $('#view3').text(albums3[2]);
                     $.post("/postdata",
-                            {
-                                data1: 2,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 2,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img3.jpg';
+                var src1 = 'images/albums' + flag + '/img3.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                var t='albums'+flag;
+                var t = 'albums' + flag;
 
 
             });
-            $('#img4').click(function(){
+            $('#img4').click(function () {
 
-                if(flag==1){
-                    albums1[3]=albums1[3]+1;
+                if (flag == 1) {
+                    albums1[3] = albums1[3] + 1;
                     $('#view4').text(albums1[3]);
                     $.post("/postdata",
-                            {
-                                data1: 3,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 3,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[3]=albums2[3]+1;
+                if (flag == 2) {
+                    albums2[3] = albums2[3] + 1;
                     $('#view4').text(albums2[3]);
                     $.post("/postdata",
-                            {
-                                data1: 3,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 3,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[3]=albums3[3]+1;
+                if (flag == 3) {
+                    albums3[3] = albums3[3] + 1;
                     $('#view4').text(albums3[3]);
                     $.post("/postdata",
-                            {
-                                data1: 3,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 3,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img4.jpg';
+                var src1 = 'images/albums' + flag + '/img4.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                var t='albums'+flag;
+                var t = 'albums' + flag;
 
 
             });
-            $('#img5').click(function(){
+            $('#img5').click(function () {
 
-                if(flag==1){
-                    albums1[4]=albums1[4]+1;
+                if (flag == 1) {
+                    albums1[4] = albums1[4] + 1;
                     $('#view5').text(albums1[4]);
                     $.post("/postdata",
-                            {
-                                data1: 4,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 4,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[4]=albums2[4]+1;
+                if (flag == 2) {
+                    albums2[4] = albums2[4] + 1;
                     $('#view5').text(albums2[4]);
                     $.post("/postdata",
-                            {
-                                data1: 4,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 4,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[4]=albums3[4]+1;
+                if (flag == 3) {
+                    albums3[4] = albums3[4] + 1;
                     $('#view5').text(albums3[4]);
                     $.post("/postdata",
-                            {
-                                data1: 4,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 4,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img5.jpg';
+                var src1 = 'images/albums' + flag + '/img5.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                var t='albums'+flag;
+                var t = 'albums' + flag;
 
 
             });
-            $('#img6').click(function(){
+            $('#img6').click(function () {
 
-                if(flag==1){
-                    albums1[5]=albums1[5]+1;
+                if (flag == 1) {
+                    albums1[5] = albums1[5] + 1;
                     $('#view6').text(albums1[5]);
                     $.post("/postdata",
-                            {
-                                data1: 5,
-                                data2:flag,
-                                data3:albums1.toString()
+                        {
+                            data1: 5,
+                            data2: flag,
+                            data3: albums1.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==2){
-                    albums2[5]=albums2[5]+1;
+                if (flag == 2) {
+                    albums2[5] = albums2[5] + 1;
                     $('#view6').text(albums2[5]);
                     $.post("/postdata",
-                            {
-                                data1: 5,
-                                data2:flag,
-                                data3:albums2.toString()
+                        {
+                            data1: 5,
+                            data2: flag,
+                            data3: albums2.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                if(flag==3){
-                    albums3[5]=albums3[5]+1;
+                if (flag == 3) {
+                    albums3[5] = albums3[5] + 1;
                     $('#view6').text(albums3[5]);
                     $.post("/postdata",
-                            {
-                                data1: 5,
-                                data2:flag,
-                                data3:albums3.toString()
+                        {
+                            data1: 5,
+                            data2: flag,
+                            data3: albums3.toString()
 
 
-                            },
-                            function(data, status){
-                                ///alert("Data: " + data + "\nStatus: " + status);
-                            });
+                        },
+                        function (data, status) {
+                            ///alert("Data: " + data + "\nStatus: " + status);
+                        });
                 }
-                var src1='images/albums'+ flag+'/img6.jpg';
+                var src1 = 'images/albums' + flag + '/img6.jpg';
 
-                $('#img_modal').attr('src',src1);
+                $('#img_modal').attr('src', src1);
                 $('#myModal').modal('show');
-                var t='albums'+flag;
+                var t = 'albums' + flag;
 
 
 
@@ -439,150 +438,258 @@
 </head>
 
 <body>
+    <div id="wrapper">
+        <div id="top">
+            <!--logo-->
+            <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
+        </div>
 
-    <div id="top">
-        <!--logo-->
-        <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
-    </div>
 
-
-    <nav class="nav navbar-default">
-        <div class="">
-            <ul class="nav navbar-nav">
-                <li class=""><a href="home.html">HOME</a></li>
-                <li class="active"><a href="albums.html"><b>ALBUMS</b></a></li>
-                <li class=""><a href="about.html">ABOUT</a></li>
-                <li class=""><a href="blog.html">BLOG</a></li>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group"> <input class="form-control" placeholder="Search" type="text"></div>
-                    <button type="submit" class="btn btn-default">Tìm kiếm</button>
+        <!--Navigation bar-->
+        <nav class="nav navbar-inverse" id="nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                    name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="man-nav">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="home.html"><span class="glyphicon glyphicon-home"><b> HOME</b></span></a></li>
+                    <li class="active"><a href="albums.html"><b> ALBUMS</b></a></li>
+                    <li class=""><a href="about.html"><span><b>ABOUT</b></span></a></li>
+                    <li class=""><a href="blog.html"><b>BLOG</b></a></li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
                 </form>
-            </ul>
-        </div>
-    </nav>
-   <!-- create by meo bach-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"><a><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 
-
-    <div id="container" class="container-fluid">
-        <div class="thumbnail" style="width: 300px;display: inline-block; margin:20px;margin-left: 20%">
-            <a  class="aa" href="" id="albums1" style="text-decoration: none" >
-                <img src="images/albums1/img4.jpg">
-                <div style="text-align: center;font-size: 20px;" class="caption">
-                    Ảnh động vật
-                </div>
-            </a>
-        </div>
-        <div class="thumbnail" style="width: 300px;display: inline-block;margin: 20px;margin-left: 20px">
-            <a class="aa" href="" id="albums2" style="text-decoration: none">
-                <img src="images/albums2/img1.jpg">
-                <div style="text-align: center;font-size: 20px" class="caption">
-                    Ảnh thực vật
-                </div>
-            </a>
-        </div>
-        <div class="thumbnail" style="width: 300px;display: inline-block;margin: 20px">
-            <a class="aa" href="" id="albums3" style="text-decoration: none">
-                <img src="images/albums3/img3.jpg">
-                <div style="text-align: center;font-size: 20px" class="caption">
-                    Ảnh Thiên nhiên
-                </div>
-            </a>
-        </div>
-
-
-    </div>
-    <!-------------------list chưa anh-->
-    <div style="display: none" id="container_img">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img1.jpg" id="img1">
-                        <div class="caption" style="text-align: center;font-size: 20px " id="view1">
-                            view1
-                        </div>
-                    </a>
-                </div>
+                </ul>
             </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img2.jpg" id="img2">
-                        <div class="caption" style="text-align: center;font-size: 20px" id="view2">
-                            view
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img3.jpg" id="img3">
-                        <div class="caption" style="text-align: center;font-size: 20px" id="view3">
-                            view
-                        </div>
-                    </a>
-                </div>
-            </div>
+        </nav>
 
+        <!--Lef Menu-->
+        <div id="leftmenu" style="float: left">
+            <nav class="nav navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                        name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="nav navbar-left">
+                        <h4><b>Favorite</b></h4>
+                        <li class=""><a href="">Animals</a></li>
+                        <li class=""><a href="">Flowers</a></li>
+                        <li class=""><a href="">Nature</a></li>
+                        <li class=""><a href="">People</a></li>
+                        </br>
+
+                        <h4><b>Special</b></h4>
+                        <li class=""><a href="">Life</a></li>
+                        <li class=""><a href="about.html">Spring</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img4.jpg" id="img4">
-                        <div class="caption" style="text-align: center;font-size: 20px" id="view4">
-                            view
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img5.jpg" id="img5">
-                        <div class="caption" style="text-align: center;font-size: 20px" id="view5">
-                            view
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="thumbnail">
-                    <a class="aa" href="" style="text-decoration: none">
-                        <img src="images/albums3/img6.jpg" id="img6">
-                        <div class="caption" style="text-align: center;font-size: 20px" id="view6">
-                            view
-                        </div>
-                    </a>
-                </div>
-            </div>
 
+        <!-- create by meo bach-->
+        <div id="content" class="container-fluid">
+            <div class="thumbnail" style="width: 400px;display: inline-block; margin:20px;margin-left: 10%">
+                <a class="aa" href="" id="albums1" style="text-decoration: none">
+                    <img src="images/albums1/img4.jpg">
+                    <div style="text-align: center;font-size: 20px;" class="caption">
+                        Animals
+                    </div>
+                </a>
+            </div>
+            <div class="thumbnail" style="width: 400px;display: inline-block;margin: 20px;margin-left: 20px">
+                <a class="aa" href="" id="albums2" style="text-decoration: none">
+                    <img src="images/albums2/img1.jpg">
+                    <div style="text-align: center;font-size: 20px" class="caption">
+                        Flowers
+                    </div>
+                </a>
+            </div>
+            <div class="thumbnail" style="width: 400px;display: inline-block;margin: 20px; margin-left: 10%">
+                <a class="aa" href="" id="albums3" style="text-decoration: none">
+                    <img src="images/albums3/img3.jpg">
+                    <div style="text-align: center;font-size: 20px" class="caption">
+                        Nature
+                    </div>
+                </a>
+            </div>
         </div>
-    </div>
-    <!--MODAL-->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                </div>
-                <div class="modal-body"  >
-                    <div style="width: 610px;margin: 0 auto">
-                        <img src=""  style="width: 600px;" id="img_modal">
+        <!---list chưa anh-->
+        <div style="display: none" id="container_img">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img1.jpg" id="img1">
+                            <div class="caption" style="text-align: center;font-size: 20px " id="view1">
+                                view1
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img2.jpg" id="img2">
+                            <div class="caption" style="text-align: center;font-size: 20px" id="view2">
+                                view
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img3.jpg" id="img3">
+                            <div class="caption" style="text-align: center;font-size: 20px" id="view3">
+                                view
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img4.jpg" id="img4">
+                            <div class="caption" style="text-align: center;font-size: 20px" id="view4">
+                                view
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img5.jpg" id="img5">
+                            <div class="caption" style="text-align: center;font-size: 20px" id="view5">
+                                view
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <a class="aa" href="" style="text-decoration: none">
+                            <img src="images/albums3/img6.jpg" id="img6">
+                            <div class="caption" style="text-align: center;font-size: 20px" id="view6">
+                                view
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--MODAL-->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div style="width: 610px;margin: 0 auto">
+                            <img src="" style="width: 600px;" id="img_modal">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!--login clicked to show form-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title" id="exampleModalLabel" style="text-align: center"><b>LOGIN</b></h2>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="form-signin">
+                            <div class="imgcontainer">
+                                <img src="images/login/login1.png" alt="Avatar" class="img-responsive center-block" style="height: 100px;">
+                            </div>
+                            </br>
+                            <label for="inputEmail" class="sr-only">Email address</label>
+                            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                            </br>
+                            <label for="inputPassword" class="sr-only">Password</label>
+                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="remember-me"> Remember me
+                                </label>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                            </br>
+                            <img src="images/logo/fb.svg" alt="" width="30px" height="30px">
+                            <a href="https://vi-vn.facebook.com/login/" style="text-align: center">Sign in with facebook</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--Footet-->
+        <div id="footer">
+            <div id="icon" style="margin-left: 70px">
+                <div class="contact" style="float: left; margin-top:  30px">
+                    <p class="text-muted" style="color: white">This lab made by <a href="">1412439-1412529</a></p>
+                </div>
+                <ul class="list-inline center-block" style="margin-left: 900px">
+                    <li>
+                        <a href="http://facebook.com"><img src="images/logo/fb.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://google.com"><img src="images/logo/gg.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://skype.com"><img src="images/logo/s.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com"><img src="images/logo/yt.svg"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
+        <script src="js/bootstrap.js " charset="UTF-8 "></script>
     </div>
-
-
-
-
 
 </body>
 
