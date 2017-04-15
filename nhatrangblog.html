@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Bootstrap</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/blogchild.css">
+
+</head>
+
+<body>
+    <div id="wrapper" style="width: 100%">
+
+        <!--Header-->
+        <div id="top">
+            <!--logo-->
+            <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
+        </div>
+
+        <!--Navigation bar-->
+        <nav class="nav navbar-inverse" id="nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                    name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="man-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Website Name</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="home.html"><b>HOME</b></a></li>
+                    <li class=""><a href="albums.html"><b>ALBUMS</b></a></li>
+                    <li class=""><a href="about.html"><b>ABOUT</b></a></li>
+                    <li class=" "><a href="blog.html"><b>BLOG</b></a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--content-->
+        <div id="content" style="width: 90%; margin-left: 65px">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <hr>
+                <h2><b>Nha Trang beautiful Vietnam's beach</b></h2>
+                <h5><span class="glyphicon glyphicon-time"></span> Post by Quan, April 12, 2017.</h5>
+                <a href="#">Views  <span class="badge"> 53</span></a>
+                </br>
+                </br>
+                <p>Nha Trang, a university town at the mouth of a beautiful bay with a huge sweeping beach, is possibly one
+                    of my favourite places in Vietnam - one day I plan to live there!</p>
+                </br>
+                <img src="images/blog/nha-trang-beach1.jpg" alt="img-reponsive" style="width: 800px; height: auto; margin-left: 100px">
+                </br>
+                </br>
+
+                <p>As a beach destination it takes some beating, with delicious restaurants, great bars, beautiful diving and
+                    crystal clear water. There are boat trips out to the islands for divers and non-divers alike, snorkelling
+                    and fishing trips and if its a little chilly you can go and bathe in the hot springs.
+                </p>
+                </br>
+                </br>
+
+                <img src="images/blog/nha-trang-beach2.jpg" alt="img-reponsive" style="width: 800px;height: auto; margin-left: 100px">
+
+                </br>
+                </br>
+                <p>More recently there has been an explosion in watersports, with catamarans, jet skis and paragliding available
+                    for hire on the beach, as well as kayaks, windsurfers and bodyboards. Yet unlike other beach destinations
+                    in Viet Nam it offers a lot more - with a popular university as well as training for Vietnam's Navy the
+                    town has a distinct character of its own. It's a great place to hire a bike and cruise up and down the
+                    boulevard that lines the seafront on a bright breezy day - its very popular with the students in the
+                    evenings too!
+                </p>
+                </br>
+                </br>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+
+        <!--Pager-->
+        <div style="width: 90%; margin-left: 65px; background-color: white">
+            <nav aria-label="" style="background-color:lightgreen">
+                <ul class="pager">
+                    <li class="previous "><a href="ilovefoodblog.html"><span aria-hidden="true ">&larr;</span> Previous</a></li>
+                    <li class="next "><a href="quynhoncityblog.html ">Next <span aria-hidden="true ">&rarr;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <!--footer-->
+        <div id="footer">
+            <div id="icon" style="margin-left: 70px">
+                <div class="contact" style="float: left; margin-top: 30px">
+                    <p class="text-muted" style="color:white">This lab made by team <a href="">1412439-1412529</a></p>
+                </div>
+                <ul class="list-inline center-block" style="margin-left: 900px; margin-top: 10px">
+                    <li>
+                        <a href="http://facebook.com"><img src="images/logo/fb.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://google.com"><img src="images/logo/gg.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://skype.com"><img src="images/logo/s.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com"><img src="images/logo/yt.svg"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
+        <script src="js/bootstrap.js " charset="UTF-8 "></script>
+
+    </div>
+
+</body>
+
+</html>

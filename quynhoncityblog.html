@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Bootstrap</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/blogchild.css">
+
+</head>
+
+<body>
+    <div id="wrapper" style="width: 100%">
+
+        <!--Header-->
+        <div id="top">
+            <!--logo-->
+            <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
+        </div>
+
+        <!--Navigation bar-->
+        <nav class="nav navbar-inverse" id="nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                    name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="man-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Website Name</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="home.html"><b>HOME</b></a></li>
+                    <li class=""><a href="albums.html"><b>ALBUMS</b></a></li>
+                    <li class=""><a href="about.html"><b>ABOUT</b></a></li>
+                    <li class=" "><a href="blog.html"><b>BLOG</b></a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--content-->
+        <div id="content" style="width: 90%; margin-left: 65px">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <hr>
+                <h2><b>Introducing Quy Nhon</b></h2>
+                <h5><span class="glyphicon glyphicon-time"></span> Post by Quan, Friday 14, 2017.</h5>
+                <a href="#">Views  <span class="badge"> 35</span></a>
+                </br>
+                </br>
+                <p>A large, prosperous coastal city, Quy Nhon (pronounced ‘hwee ngon’) boasts a terrific beach-blessed shoreline
+                    and grand boulevards. Its seaside appeal and tidy, litter-free streets make it the kind of place that
+                    affluent Vietnamese couples choose to retire to, spending their final days ocean-gazing and promenade-walking.</p>
+                </br>
+                <img src="images/blog/Quy-Nhon1.jpg" alt="img-reponsive" style="width: 800px; height: auto; margin-left: 100px">
+                </br>
+                </br>
+
+                <p>Quy Nhon is certainly a good spot to sample some fresh seafood, but for most foreign visitors the city's
+                    attractions are less obvious. However, growing numbers are being drawn to Bai Xep cove, 12km south of
+                    the centre, where a cool little scene has developed around a crop of new guesthouses.
+                </p>
+                </br>
+                </br>
+
+                <img src="images/blog/Quy-Nhon2.jpg" alt="img-reponsive" style="width: 800px;height: auto; margin-left: 100px">
+
+                </br>
+                </br>
+                <p>Quy Nhon has many beautiful beaches, including Hoang Hau (Queen Beach) that could take visitors’ breath away
+                    if they admire it from Ganh Rang Hill. The beach attracts a large number of locals and tourists in summer,
+                    as the sea is calm and warm.
+                </p>
+                </br>
+                </br>
+            </div>
+            <div class="col-sm-1"></div>
+
+        </div>
+        <!--Pager-->
+        <div style="width: 90%; margin-left: 65px; background-color: white">
+            <nav aria-label="" style="background-color: lightgreen">
+                <ul class="pager">
+                    <li class="previous "><a href="nhatrangblog.html"><span aria-hidden="true ">&larr;</span> Previous</a></li>
+                    <li class="next "><a href="ilovefoodblog.html ">Next <span aria-hidden="true ">&rarr;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+        <!--footer-->
+        <div id="footer">
+            <div id="icon" style="margin-left: 70px">
+                <div class="contact" style="float: left; margin-top: 30px">
+                    <p class="text-muted" style="color:white">This lab made by team <a href="">1412439-1412529</a></p>
+                </div>
+                <ul class="list-inline center-block" style="margin-left: 900px; margin-top: 10px">
+                    <li>
+                        <a href="http://facebook.com"><img src="images/logo/fb.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://google.com"><img src="images/logo/gg.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://skype.com"><img src="images/logo/s.svg"></a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com"><img src="images/logo/yt.svg"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
+        <script src="js/bootstrap.js " charset="UTF-8 "></script>
+
+    </div>
+
+</body>
+
+</html>

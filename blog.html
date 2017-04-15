@@ -13,31 +13,193 @@
 </head>
 
 <body>
+    <div id="wrapper">
 
-    <div id="top">
-        <!--logo-->
-        <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
-    </div>
+        <!--Header-->
+        <div id="top">
+            <!--logo-->
+            <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
+        </div>
+
+        <!--Navigation bar-->
+        <nav class="nav navbar-inverse" id="nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                    name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="man-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">QT IMPACT</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="home.html"><b>HOME</b></a></li>
+                    <li class=""><a href="albums.html"><b>ALBUMS</b></a></li>
+                    <li class=""><a href="about.html"><b>ABOUT</b></a></li>
+                    <li class="active"><a href="blog.html"><b>BLOG</b></a></li>
+                </ul>
 
 
-    <nav class="nav navbar-default">
-        <div class="">
-            <ul class="nav navbar-nav">
-                <li class=""><a href="home.html">HOME</a></li>
-                <li class=""><a href="albums.html">ALBUMS</a></li>
-                <li class=""><a href="about.html">ABOUT</a></li>
-                <li class="active"><a href="blog.html"><b>BLOG</b></a></li>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group"> <input class="form-control" placeholder="Search" type="text"></div>
-                    <button type="submit" class="btn btn-default">Tìm kiếm</button>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
                 </form>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Lef Menu-->
+        <div id="leftmenu">
+            <nav class="nav navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                        name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="nav navbar-left">
+                        <h4><b>Recent Post</b></h4>
+                        <li class=""><a href="ilovefoodblog.html">Vietnames Food</a></li>
+                        <li class=""><a href="nhatrangblog.html">Nhatrang's Beach</a></li>
+                        </br>
+
+                        <h4><b>Favorites</b></h4>
+                        <li class=""><a href="quynhoncityblog.html">Quy Nhon City</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--content-->
+        <div id="content">
+            <!--blog-->
+            <!--Vietnames food-->
+            <div class="row" style="margin-top: 10px">
+                <div class="col-sm-3" style="width: 200px">
+                    <div class="well">
+                        <p style="margin-left: 25px">Thong Bach</p>
+                        <img src="images/home/1412529.jpg" class="" height="110" width="110" alt="Avatar" style="margin-left: 11px">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="well">
+                        <h4><small>RECENT POSTS</small></h4>
+                        <hr>
+                        <h2><a href="ilovefoodblog.html">Vietnames Food</a></h2>
+                        <h4>What To Eat In Vietnam?</h4>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Thong, Wendnesday April 12, 2017.</h5>
+                        <a href="#">Views  <span class="badge"> 10</span></a>
+                        </br>
+                        </br>
+                        <p>Food is my passion. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua...<a href="ilovefoodblog.html">read more</a></p>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+
+            <!--Nhatrang's beach-->
+            <div class="row" style="margin-top: 10px">
+                <div class="col-sm-3" style="width: 200px">
+                    <div class="well">
+                        <p style="margin-left: 25px">Hoang Quan</p>
+                        <img src="images/home/1412439.jpg" class="" height="110" width="110" alt="Avatar" style="margin-left: 11px">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="well">
+                        <h4><small>RECENT POSTS</small></h4>
+                        <hr>
+                        <h2><a href="nhatrangblog.html">Nha Trang beautiful Vietnam's beach</a></h2>
+                        <h4>Have a nice trip!</h4>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Quan, Wendnesday April 12, 2017.</h5>
+                        <a href="#">Views  <span class="badge"> 53</span></a>
+                        </br>
+                        </br>
+                        <p>Nha Trang, a university town at the mouth of a beautiful bay with a huge sweeping beach, is possibly
+                            one of my favourite places in Vietnam - one day I plan to live there!...<a href="nhatrangblog.html">read more</a></p>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+
+            <!--Quy Nhon city-->
+            <div class="row" style="margin-top: 10px">
+                <div class="col-sm-3" style="width: 200px">
+                    <div class="well">
+                        <p style="margin-left: 25px">Hoang Quan</p>
+                        <img src="images/home/1412439.jpg" class="" height="110" width="110" alt="Avatar" style="margin-left: 11px">
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="well">
+                        <h4><small>RECENT POSTS</small></h4>
+                        <hr>
+                        <h2><a href="quynhoncityblog.html">Introducing Quy Nhon city</a></h2>
+                        <h4>My home!</h4>
+                        <h5><span class="glyphicon glyphicon-time"></span> Post by Quan, Friday April 14, 2017.</h5>
+                        <a href="#">Views  <span class="badge"> 35</span></a>
+                        </br>
+                        </br>
+                        <p>A large, prosperous coastal city, Quy Nhon (pronounced ‘hwee ngon’) boasts a terrific beach-blessed
+                            shoreline and grand boulevards...<a href="quynhoncityblog.html">read more</a></p>
+                        <br><br>
+
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
+        <script src="js/bootstrap.js " charset="UTF-8 "></script>
+
+    </div>
+    <!--footer-->
+    <div id="footer">
+        <div id="icon" style="margin-left: 70px">
+            <div class="contact" style="float: left; margin-top: 30px">
+                <p class="text-muted" style="color:white">This lab made by team <a href="">1412439-1412529</a></p>
+            </div>
+            <ul class="list-inline center-block" style="margin-left: 900px; margin-top: 10px">
+                <li>
+                    <a href="http://facebook.com"><img src="images/logo/fb.svg"></a>
+                </li>
+                <li>
+                    <a href="http://google.com"><img src="images/logo/gg.svg"></a>
+                </li>
+                <li>
+                    <a href="http://skype.com"><img src="images/logo/s.svg"></a>
+                </li>
+                <li>
+                    <a href="http://youtube.com"><img src="images/logo/yt.svg"></a>
+                </li>
             </ul>
         </div>
-    </nav>
-    <h1>Blog</h1>
+    </div>
+    </div>
 
-    <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
-    <script src="js/bootstrap.js " charset="UTF-8 "></script>
 
 </body>
 

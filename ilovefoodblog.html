@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello Bootstrap</title>
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/blogchild.css">
+
+</head>
+
+<body>
+    <div id="wrapper" style="width: 100%">
+
+        <!--Header-->
+        <div id="top">
+            <!--logo-->
+            <a href="home.html" title="Home"><img src="images/logo1.png" alt="" /></a>
+        </div>
+
+        <!--Navigation bar-->
+        <nav class="nav navbar-inverse" id="nav">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-target="#main-nav" data-toggle="collapse" aria-expanded="false"
+                    name="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="man-nav">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Website Name</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="home.html"><b>HOME</b></a></li>
+                    <li class=""><a href="albums.html"><b>ALBUMS</b></a></li>
+                    <li class=""><a href="about.html"><b>ABOUT</b></a></li>
+                    <li class=" "><a href="blog.html"><b>BLOG</b></a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group input-group">
+                        <input type="text" class="form-control" placeholder="Search..">
+                        <span class="input-group-btn">
+            <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--content-->
+        <div id="content" style="width: 90%; margin-left: 65px">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+                <hr>
+                <h2><b>I Love Food</b></h2>
+                <h5><span class="glyphicon glyphicon-time"></span> Post by Thong, April 12, 2017.</h5>
+                <a href="#">Views  <span class="badge"> 10</span></a>
+                </br>
+                </br>
+                <p>
+                    In the past few years Vietnamese food has become more and more popular around the world. Food lovers may have tried the two
+                    best known Vietnamese dishes – spring rolls and bread rolls. Rice, noodles, fresh vegetable and herbs
+                    all play big roles in Vietnamese food, making it one of the healthiest cuisines in the world.</p>
+                <p>
+                    In Vietnam you’ll discover one unmistakable fact: Vietnamese people love noodles. They eat them every day, sometimes for
+                    every meal. Vietnamese noodles are made from a few basic ingredients, the most common being rice, wheat
+                    and mung beans, but a whole sub-cuisine is built on these basics.
+                </p>
+                </br>
+                </br>
+                <img src="images/blog/vietnam-market-food.jpg" alt="img-reponsive" style="margin-left: 70px">
+                </br>
+                </br>
+                <p>In the northern part of the country, thanks to the influence of neighbouring China, people tend to use more
+                    soy sauce than other parts, where fish sauce is more usual. Other common ingredients in Vietnamese cooking
+                    include black pepper (mainly in the north), hot chili, coconut milk, limes, lemon grass, tamarind and
+                    cane sugar, supplemented by asparagus and potatoes, courtesy of the French influence. Methods of cooking
+                    vary from simmering or boiling to frying or grilling. Stir-frying using a wok and chopsticks is common.
+                    Many European influences can be found in Vietnamese dishes, including sauces, meats, cold roast pork,
+                    patés and baguettes (French rolls). At the other end of the scale, in some parts of the country there
+                    is still plenty of demand for exotic meats such as dog, turtle and snake.
+                </p>
+                </br>
+                </br>
+            </div>
+        </div>
+
+        <!--Pager-->
+        <div style="width: 90%; margin-left: 65px; background-color: white">
+            <nav aria-label="" style="background-color: lightgreen">
+                <ul class="pager">
+                    <li class="previous "><a href="quynhoncityblog.html"><span aria-hidden="true ">&larr;</span> Previous</a></li>
+                    <li class="next "><a href="nhatrangblog.html ">Next <span aria-hidden="true ">&rarr;</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+        <!--footer-->
+        <div id="footer ">
+            <div id="icon " style="margin-left: 70px ">
+                <div class="contact " style="float: left; margin-top: 30px ">
+                    <p class="text-muted " style="color:white ">This lab made by team <a href=" ">1412439-1412529</a></p>
+                </div>
+                <ul class="list-inline center-block " style="margin-left: 900px; margin-top: 10px ">
+                    <li>
+                        <a href="http://facebook.com "><img src="images/logo/fb.svg "></a>
+                    </li>
+                    <li>
+                        <a href="http://google.com "><img src="images/logo/gg.svg "></a>
+                    </li>
+                    <li>
+                        <a href="http://skype.com "><img src="images/logo/s.svg "></a>
+                    </li>
+                    <li>
+                        <a href="http://youtube.com "><img src="images/logo/yt.svg "></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="js/jquery-3.2.0.min.js " charset="UTF-8 "></script>
+        <script src="js/bootstrap.js " charset="UTF-8 "></script>
+
+    </div>
+
+</body>
+
+</html>
