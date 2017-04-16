@@ -1,11 +1,10 @@
 
+/*Navigation bar 992px*/
 @media only screen and (max-width: 992px) {
     .navbar-header {
         float: none;
     }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
+    
     .navbar-toggle {
         display: block;
     }
@@ -36,6 +35,8 @@
     }
 }
 
+
+
 #wrapper{
     width: 100%;
     margin:auto;
@@ -56,7 +57,6 @@
 #leftmenu{
     width:17%;
     height: 11  00px;
-    /*background-color: rgb(248, 248, 248);*/
     float : left;
 }
 
